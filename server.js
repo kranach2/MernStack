@@ -9,7 +9,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-if(process.env.Node_ENV === "production"){
+if(process.env.NODE_ENV === "production"){
   app.use (express.static("frontend/build"));
 }
 const uri = process.env.ATLAS_URI;
