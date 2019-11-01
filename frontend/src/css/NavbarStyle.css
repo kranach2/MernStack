@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  color: white;
+}
+.navbarStyle {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.unl {
+  display: inline-flex;
+  list-style-type: none;
+}
+
+.link:link {
+  text-decoration: none;
+  color: white;
+}
+.link:visited {
+  color: green;
+}
+.link:hover {
+  color: turquoise;
+}
+.link:active {
+  color: blue;
+}
+li {
+  padding: 5px;
+  font-size: 25px;
+  color: black;
+}
+
+li:last-child {
+  margin-right: 5px;
+}
