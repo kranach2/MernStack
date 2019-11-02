@@ -4,6 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const usersRouter = require("./routes/users");
+const path = require("path");
 
 const port = process.env.PORT || 5000;
 
@@ -11,10 +12,8 @@ app.use(cors());
 app.use(express.json());
 app.use("/users", usersRouter);
 
-if(process.env.NODE_ENV === "production"){
-  app.use(express.static("frontend/build"));
-}
-const uri = process.env.ATLAS_URI;
+
+const uri = process.env.ATLAS_URI || process.env.MONGODB_URI;
 mongoose
   .connect(uri, {
     useNewUrlParser: true,
@@ -32,6 +31,16 @@ const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("Mongodb database is connected");
 });
+
+if(process.env.NODE_ENV === "production"){
+  app.use(express.static("frontend/build"));
+
+  app.get("*", (req, res) =>{
+    res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
+  
+  });
+}
+
 
 
 app.listen(port, () => {

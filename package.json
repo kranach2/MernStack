@@ -2,9 +2,12 @@
   "name": "package.json",
   "version": "1.0.0",
   "description": "Mern Practice",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",  
+      "server": "nodemon server.js",
+    "heroku-postbuild":"cd frontend && npm install && npm run build"
   },
   "author": "Kishor Rana Chhetri",
   "license": "MIT",

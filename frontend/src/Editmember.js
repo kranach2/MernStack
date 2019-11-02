@@ -50,7 +50,7 @@ const Editmember = () => {
     };
 
     axios
-      .post("http://localhost:5000/users/update/" + id, member)
+      .post("api/users/update/" + id, member)
       .then(res => {console.log(res.data)
         setloading(false);
       setmessage("Member updated!!!");
