@@ -32,7 +32,7 @@ const Membership = () => {
       contact: contact
     };
 
-    axios.post("api/users/add", member).then(res => {
+    axios.post("/users/add", member).then(res => {
       console.log(res.data);
       setloading(false);
       setmessage("User added!!!");

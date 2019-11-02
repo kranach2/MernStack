@@ -13,7 +13,7 @@ app.use(express.json());
 app.use("/users", usersRouter);
 
 
-const uri = process.env.ATLAS_URI || process.env.MONGODB_URI;
+const uri = process.env.ATLAS_URI;
 mongoose
   .connect(uri, {
     useNewUrlParser: true,

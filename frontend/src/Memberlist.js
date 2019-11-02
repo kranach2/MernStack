@@ -7,7 +7,7 @@ export default function Memberlist() {
 
   useEffect(() => {
     axios
-      .get("/api/users/")
+      .get("/users/")
       .then(response => {
         setuser(response.data);
       })
@@ -17,7 +17,7 @@ export default function Memberlist() {
   });
 
   const deleteUser = id => {
-    axios.delete("/api/users/" + id).then(res => {
+    axios.delete("/users/" + id).then(res => {
       console.log(res.data);
     });
     console.log("deleted");
