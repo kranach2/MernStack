@@ -2,13 +2,14 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
-
 require("dotenv").config();
 const usersRouter = require("./routes/users");
+
 const port = process.env.PORT || 5000;
-console.log(process.env.PORT);
+
 app.use(cors());
 app.use(express.json());
+app.use("/users", usersRouter);
 
 if(process.env.NODE_ENV === "production"){
   app.use(express.static("frontend/build"));
@@ -32,7 +33,7 @@ connection.once("open", () => {
   console.log("Mongodb database is connected");
 });
 
-app.use("/users", usersRouter);
+
 app.listen(port, () => {
   console.log(`The server is running in port ${port}`);
 });
