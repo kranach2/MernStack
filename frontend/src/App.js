@@ -32,8 +32,8 @@ const Home = () => {
     <header className="App-header">
       <h4 style={{ color: "green", fontSize: "20px" }}>
         Welcome to MERN-STACK APP DEVLOPMENT
-      </h4>
-      <h4 style={h2Style}>This is Home Page</h4>
+      </h4><br/><br/>
+      <h2 style={h2Style}>This is Home Page</h2>
     </header>
   );
 };
