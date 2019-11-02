@@ -34,6 +34,7 @@ const Home = () => {
         Welcome to MERN-STACK APP DEVLOPMENT
       </h4><br/><br/>
       <h2 style={h2Style}>This is Home Page</h2>
+      <p>This is simple mern app practice!!!</p>
     </header>
   );
 };
